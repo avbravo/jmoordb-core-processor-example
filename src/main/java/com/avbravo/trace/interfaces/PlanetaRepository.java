@@ -18,5 +18,5 @@ public interface PlanetaRepository {
     String getFirstName();
    // @Query("select * from Planeta");
 //    public List<Planeta> findAll();
-    
+     public boolean equals(Object obj);
 }
