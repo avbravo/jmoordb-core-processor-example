@@ -5,22 +5,25 @@
 package com.avbravo.trace.interfaces;
 
 import com.avbravo.jmoordb.core.annotation.Mandatory;
+import com.avbravo.jmoordb.core.annotation.Query;
 import com.avbravo.jmoordb.core.annotation.Repository;
 import com.avbravo.trace.model.Person;
+import java.util.List;
+import java.util.Optional;
 
 /**
  *
  * @author avbravo
  */
-@Repository(entity = Person.class, jakarta = false)
+@Repository(entity = Person.class, jakarta = true)
 public interface PersonRepository {
 
     @Mandatory
     String getFirstName();
-//public List<Person> findAll();
-
-    //public List<Country> findAll();
-//    public Optional<Country> findById(String id);
+    @Query(where = "")
+public List<Person> findAll();
+@Query(where = "idperson = @idperson")
+public Optional<Person> findById(String id);
 //    public List<Country> findByCountry(String contry);
 //    public Country save(Country country);
 //    public void deleteById(String id);
