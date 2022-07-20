@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.avbravo.trace.repository;
+package com.avbravo.trace.lookup.repository;
 
 
 
-import com.avbravo.trace.model.Country;
+import com.avbravo.trace.model.automovilismo.Auto;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -31,7 +31,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
  */
 @ApplicationScoped
 //@Stateless
-public class CountryRepositoryImpl implements CountryRepository {
+public class AutoRepositoryImpl implements AutoRepository {
 
     @Inject
     private Config config;
@@ -44,21 +44,21 @@ public class CountryRepositoryImpl implements CountryRepository {
     MongoClient mongoClient;
 
     @Override
-    public List<Country> findAll() {
+    public List<Auto> findAll() {
 
-        List<Country> list = new ArrayList<>();
+        List<Auto> list = new ArrayList<>();
         try {
 
-            MongoDatabase database = mongoClient.getDatabase("autentification");
+            MongoDatabase database = mongoClient.getDatabase("automovilismo");
      
-            MongoCollection<Document> collection = database.getCollection("country");
+            MongoCollection<Document> collection = database.getCollection("auto");
 
             MongoCursor<Document> cursor = collection.find().iterator();
             Jsonb jsonb = JsonbBuilder.create();
             try {
                 while (cursor.hasNext()) {
-                    Country country = jsonb.fromJson(cursor.next().toJson(), Country.class);
-                    list.add(country);
+                    Auto auto = jsonb.fromJson(cursor.next().toJson(), Auto.class);
+                    list.add(auto);
                 }
             } finally {
                 cursor.close();
@@ -72,15 +72,15 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Optional<Country> findById(String id) {
+    public Optional<Auto> findById(String id) {
 
         try {
-            MongoDatabase database = mongoClient.getDatabase("autentification");
-            MongoCollection<Document> collection = database.getCollection("country");
-            Document doc = collection.find(eq("idcountry", id)).first();
+            MongoDatabase database = mongoClient.getDatabase("automovilismo");
+            MongoCollection<Document> collection = database.getCollection("auto");
+            Document doc = collection.find(eq("idauto", id)).first();
             Jsonb jsonb = JsonbBuilder.create();
-            Country country = jsonb.fromJson(doc.toJson(), Country.class);
-            return Optional.of(country);
+            Auto auto = jsonb.fromJson(doc.toJson(), Auto.class);
+            return Optional.of(auto);
         } catch (Exception e) {
             System.out.println("findById() " + e.getLocalizedMessage());
         }
@@ -89,7 +89,7 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public Country save(Country country) {
+    public Auto save(Auto auto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -99,7 +99,7 @@ public class CountryRepositoryImpl implements CountryRepository {
     }
 
     @Override
-    public List<Country> findByCountry(String contry) {
+    public List<Auto> findByAuto(String contry) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

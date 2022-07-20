@@ -6,7 +6,7 @@ package com.avbravo.trace.controller;
 
 
 import com.avbravo.trace.model.Country;
-import com.avbravo.trace.repository.CountryRepository;
+import com.avbravo.trace.lookup.repository.CountryRepository;
 import jakarta.inject.Inject;
 import java.util.ArrayList;
 import java.util.Collection;

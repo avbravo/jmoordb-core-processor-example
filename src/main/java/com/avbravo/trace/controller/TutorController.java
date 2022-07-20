@@ -6,7 +6,7 @@ package com.avbravo.trace.controller;
 
 
 import com.avbravo.trace.model.cursos.Tutor;
-import com.avbravo.trace.repository.TutorRepository;
+import com.avbravo.trace.lookup.repository.TutorRepository;
 import jakarta.inject.Inject;
 import java.util.ArrayList;
 import java.util.Collection;

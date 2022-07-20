@@ -6,7 +6,7 @@ package com.avbravo.trace.controller;
 
 
 import com.avbravo.trace.model.automovilismo.Conductor;
-import com.avbravo.trace.repository.ConductorRepository;
+import com.avbravo.trace.lookup.repository.ConductorRepository;
 import jakarta.inject.Inject;
 import java.util.ArrayList;
 import java.util.Collection;
