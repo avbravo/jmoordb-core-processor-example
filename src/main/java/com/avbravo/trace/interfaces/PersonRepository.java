@@ -18,16 +18,18 @@ import java.util.Optional;
 @Repository(entity = Person.class, jakarta = true)
 public interface PersonRepository {
 
-    @Mandatory
-    String getFirstName();
     @Query(where = "")
-public List<Person> findAll();
-@Query(where = "idperson = @idperson")
-public Optional<Person> findById(String id);
+    public List<Person> findAll();
+
+    @Query(where = "idperson = @idperson")
+    public Optional<Person> findById(String id);
+
+    @Query(where = "email = @email")
+    public List<Person> findByEmail(String email);
+
+    public Boolean save(Person person);
+
 //    public List<Country> findByCountry(String contry);
 //    public Country save(Country country);
 //    public void deleteById(String id);
-
-
-      
 }

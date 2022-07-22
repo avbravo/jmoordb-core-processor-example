@@ -5,8 +5,10 @@
 package com.avbravo.trace.interfaces;
 
 import com.avbravo.jmoordb.core.annotation.Mandatory;
+import com.avbravo.jmoordb.core.annotation.Query;
 import com.avbravo.jmoordb.core.annotation.Repository;
 import com.avbravo.trace.model.*;
+import java.util.List;
 /**
  *
  * @author avbravo
@@ -16,7 +18,7 @@ import com.avbravo.trace.model.*;
 public interface PlanetaRepository {
        @Mandatory
     String getFirstName();
-   // @Query("select * from Planeta");
-//    public List<Planeta> findAll();
+   @Query(where= "")
+    public List<Planeta> findAll();
      public boolean equals(Object obj);
 }
