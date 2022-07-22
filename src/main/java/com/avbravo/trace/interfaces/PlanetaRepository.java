@@ -7,6 +7,7 @@ package com.avbravo.trace.interfaces;
 import com.avbravo.jmoordb.core.annotation.Mandatory;
 import com.avbravo.jmoordb.core.annotation.Query;
 import com.avbravo.jmoordb.core.annotation.Repository;
+import com.avbravo.jmoordb.core.annotation.Save;
 import com.avbravo.trace.model.*;
 import java.util.List;
 /**
@@ -16,9 +17,9 @@ import java.util.List;
 
 @Repository(entity = Planeta.class, jakarta = false)
 public interface PlanetaRepository {
-       @Mandatory
-    String getFirstName();
+   
    @Query(where= "")
     public List<Planeta> findAll();
+    @Save
      public boolean equals(Object obj);
 }

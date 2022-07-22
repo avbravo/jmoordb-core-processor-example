@@ -4,9 +4,9 @@
  */
 package com.avbravo.trace.interfaces;
 
-import com.avbravo.jmoordb.core.annotation.Mandatory;
 import com.avbravo.jmoordb.core.annotation.Query;
 import com.avbravo.jmoordb.core.annotation.Repository;
+import com.avbravo.jmoordb.core.annotation.Save;
 import com.avbravo.trace.model.Person;
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +26,9 @@ public interface PersonRepository {
 
     @Query(where = "email = @email")
     public List<Person> findByEmail(String email);
-
+@Save
     public Boolean save(Person person);
+    
 
 //    public List<Country> findByCountry(String contry);
 //    public Country save(Country country);
