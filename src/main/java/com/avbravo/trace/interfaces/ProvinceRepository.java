@@ -4,11 +4,11 @@
  */
 package com.avbravo.trace.interfaces;
 
-import com.avbravo.jmoordb.core.annotation.Mandatory;
+import com.jmoordb.core.annotation.Mandatory;
 import com.avbravo.trace.model.Province;
 import java.time.LocalDate;
 import java.util.List;
-import com.avbravo.jmoordb.core.annotation.RepositoryBasic;
+import com.jmoordb.core.annotation.RepositoryBasic;
 
 /**
  *

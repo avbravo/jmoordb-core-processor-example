@@ -4,9 +4,11 @@
  */
 package com.avbravo.trace.interfaces;
 
-import com.avbravo.jmoordb.core.annotation.Query;
-import com.avbravo.jmoordb.core.annotation.Repository;
-import com.avbravo.jmoordb.core.annotation.Save;
+import com.avbravo.trace.model.Country;
+import com.jmoordb.core.annotation.Delete;
+import com.jmoordb.core.annotation.repository.Query;
+import com.jmoordb.core.annotation.repository.Repository;
+import com.jmoordb.core.annotation.repository.Save;
 import com.avbravo.trace.model.Person;
 import java.util.List;
 import java.util.Optional;
@@ -26,11 +28,9 @@ public interface PersonRepository {
 
     @Query(where = "email = @email")
     public List<Person> findByEmail(String email);
-@Save
-    public Boolean save(Person person);
+    @Save
+    public Boolean save(Person person, Country country);
+    @Delete
+    public Boolean delete(Person person);
     
-
-//    public List<Country> findByCountry(String contry);
-//    public Country save(Country country);
-//    public void deleteById(String id);
 }

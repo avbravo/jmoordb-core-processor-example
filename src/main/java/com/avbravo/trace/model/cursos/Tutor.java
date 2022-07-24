@@ -4,7 +4,7 @@
  */
 package com.avbravo.trace.model.cursos;
 
-import com.avbravo.jmoordb.core.annotation.Id;
+import com.jmoordb.core.annotation.Id;
 
 /**
  *

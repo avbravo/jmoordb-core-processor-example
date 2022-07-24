@@ -4,8 +4,8 @@
  */
 package com.avbravo.trace.model.autoimplement;
 
-import com.avbravo.jmoordb.core.annotation.AutoImplement;
-import com.avbravo.jmoordb.core.annotation.Mandatory;
+import com.jmoordb.core.annotation.AutoImplement;
+import com.jmoordb.core.annotation.Mandatory;
 import java.time.LocalDate;
 
 /**

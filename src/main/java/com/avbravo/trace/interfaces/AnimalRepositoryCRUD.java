@@ -4,7 +4,7 @@
  */
 package com.avbravo.trace.interfaces;
 
-import com.avbravo.jmoordb.core.annotation.RepositoryCRUD;
+import com.jmoordb.core.annotation.RepositoryCRUD;
 import com.avbravo.trace.model.Animal;
 import java.util.List;
 

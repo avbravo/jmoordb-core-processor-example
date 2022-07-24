@@ -4,7 +4,7 @@
  */
 package com.avbravo.trace.model;
 
-import com.avbravo.jmoordb.core.annotation.JsonObject;
+import com.jmoordb.core.annotation.JsonObject;
 
 /**
  *
