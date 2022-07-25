@@ -31,7 +31,7 @@ import com.jmoordbcore.processor.example.model.Oceano;
  */
 @Repository(entity = Oceano.class, jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
-public interface OceanoRepository {
+public interface OceanoRepository { 
 
     @Query()
     public List<Oceano> findAll();
