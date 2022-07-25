@@ -33,8 +33,8 @@ import com.jmoordbcore.processor.example.model.Oceano;
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository { 
 
-    @Query(where="id = @e")
-    public List<Oceano> findAll();
+    @Query(where="d = @id")
+    public List<Oceano> findAll(String id);
 
     @Query(where = "idoceano = @idoceano")
     public Optional<Oceano> findById(String idoceano);
