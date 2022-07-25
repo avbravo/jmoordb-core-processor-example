@@ -18,11 +18,7 @@ public class MongoDBManagerProducer implements Serializable {
     @Inject
     @ConfigProperty(name = "mongodb.uri")
     private String mongodburi;
-    @Inject
-    @ConfigProperty(name = "testconnection")
-    private Boolean testconnection;
 
-    
     
     @Produces
     @ApplicationScoped

@@ -4,17 +4,21 @@
  */
 package com.avbravo.trace.model;
 
-import com.jmoordb.core.annotation.JsonObject;
+import com.jmoordb.core.annotation.Column;
+import com.jmoordb.core.annotation.Entity;
+import com.jmoordb.core.annotation.Id;
 
 /**
  *
  * @author avbravo
  */
-@JsonObject
+@Entity(collection = "person")
 public class Person {
-
+    @Id
     private String username;
+    @Column
     private String email;
+    @Column
     private Integer edad;
 
     public Person() {

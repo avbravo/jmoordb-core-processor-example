@@ -2,28 +2,34 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.avbravo.trace.model;
+package com.jmoordbcore.processor.example.model;
 
 import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Entity;
 import com.jmoordb.core.annotation.Id;
 
+
+
 /**
  *
  * @author avbravo
  */
-
-
 @Entity
 public class Planeta {
+    
     @Id
     private String idplaneta;
     @Column
-    private String planeta;
+      private String planeta;
 
     public Planeta() {
     }
 
+    
+  
+
+    
+    
     public String getIdplaneta() {
         return idplaneta;
     }
@@ -40,7 +46,6 @@ public class Planeta {
         this.planeta = planeta;
     }
     
-   
     
     
 }
