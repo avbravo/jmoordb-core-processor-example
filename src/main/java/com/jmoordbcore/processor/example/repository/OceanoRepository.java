@@ -33,44 +33,46 @@ import com.jmoordbcore.processor.example.model.Oceano;
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository {  
  
-//    @Query(where="x .eq. @")
-    @Query(where="x .eq. @x .and. x .lt. @j")
-    public List<Oceano> findAll(String x, String j);
+    @Query()
+    public List<Oceano> findAll();
+    
+ @Query(where="oceano .eq. @oceano .and. activo .eq. @activo .limit. pagination .eq. @pagination .order. sorted .eq. @sorted")
+  public List<Oceano> findByOceanoFilter(String oceano, String activo, Pagination pagination, Document sorted );
+  
+    @Query(where = "idoceano .eq. @idoceano")
+    public Optional<Oceano> findById(String idoceano);
 
-//    @Query(where = "idoceano .eq. @idoceano")
-//    public Optional<Oceano> findById(String idoceano);
+    @Query(where = "oceano .eq. @oceano ")
+    public List<Oceano> findByOceano(String oceano);
+
+    @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
+    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
 //
-//    @Query(where = "oceano .eq. @oceano")
-//    public List<Oceano> findByOceano(String oceano);
-//
-//    @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
-//    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
-//
-//    @Query(where = "oceano .eq. @oceano", activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
-//    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Document sort);
-//
-//    @QueryJSON(activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
-//    public List<Oceano> queryJSON(Document filter, Pagination pagination, Document... sort);
-//
-//    @QueryRegex(field = "oceano", activatePagination = ActivatePagination.ON, caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-//    public List<Oceano> findRegex(String value, Pagination pagination);
-//
-//    @Count()
-//    public Integer count(Document... query);
-//
-//    @CountRegex(field = "oceano", caseSensitive = CaseSensitive.NO)
-//    public Integer countRegex(String value);
-//
-//    @Save
-//    public Optional<Oceano> save(Oceano oceano);
-//
-//    @Update
-//    public Boolean update(Oceano oceano);
-//
-//    @Delete
-//    public Boolean delete(String id);
-//
-//    @Ping
-//    public Boolean ping();
-//    
+    @Query(where = "oceano .eq. @oceano .limit. pagination .eq. @pagination .order. sort .eq. @sort", activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
+    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Document sort);
+
+    @QueryJSON(activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
+    public List<Oceano> queryJSON(Document filter, Pagination pagination, Document... sort);
+
+    @QueryRegex(field = "oceano", activatePagination = ActivatePagination.ON, caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    public List<Oceano> findRegex(String value, Pagination pagination);
+
+    @Count()
+    public Integer count(Document... query);
+
+    @CountRegex(field = "oceano", caseSensitive = CaseSensitive.NO)
+    public Integer countRegex(String value);
+
+    @Save
+    public Optional<Oceano> save(Oceano oceano);
+
+    @Update
+    public Boolean update(Oceano oceano);
+
+    @Delete
+    public Boolean delete(String id);
+
+    @Ping
+    public Boolean ping();
+    
 }
