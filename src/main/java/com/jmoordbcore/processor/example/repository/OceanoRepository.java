@@ -33,19 +33,19 @@ import com.jmoordbcore.processor.example.model.Oceano;
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository { 
 
-    @Query(where="d = @id")
-    public List<Oceano> findAll(String id);
+    @Query()
+    public List<Oceano> findAll();
 
-    @Query(where = "idoceano = @idoceano")
+    @Query(where = "idoceano .eq. @idoceano")
     public Optional<Oceano> findById(String idoceano);
 
-    @Query(where = "oceano = @oceano")
+    @Query(where = "oceano .eq. @oceano")
     public List<Oceano> findByOceano(String oceano);
 
-    @Query(where = "idoceano = @idoceano and oceano = @oceano")
+    @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
     public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
 
-    @Query(where = "oceano = @oceano", activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
+    @Query(where = "oceano .eq. @oceano", activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
     public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Document sort);
 
     @QueryJSON(activatePagination = ActivatePagination.ON, activateSort = ActivateSort.ON)
@@ -71,4 +71,5 @@ public interface OceanoRepository {
 
     @Ping
     public Boolean ping();
+    
 }
