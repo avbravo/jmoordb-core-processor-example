@@ -4,12 +4,15 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
+import com.jmoordb.core.annotation.enumerations.ActivatePagination;
+import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import java.util.List;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.enumerations.TypeOrder;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
-import com.jmoordb.core.annotation.repository.Lookup;
+import com.jmoordb.core.model.Pagination;
+import com.jmoordb.core.annotation.repository.Regex;
 
 /**
  *
@@ -17,7 +20,7 @@ import com.jmoordb.core.annotation.repository.Lookup;
  */
 @Repository(entity = Oceano.class, jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
-public interface OceanoRepository {
+public interface OceanoRepository { 
 
 //    @Query()
 //    public List<Oceano> findAll();
@@ -55,13 +58,17 @@ public interface OceanoRepository {
 //    @Query(where = "oceano .eq. @oceano .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
 //    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Sorted sorted);
 
-    @Lookup
-    public List<Oceano> lookup(Search search);
+//    @Lookup
+//    public List<Oceano> lookup(Search search);
     
-//
-//    @QueryRegex(field = "oceano", activatePagination = ActivatePagination.ON, caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-//    public List<Oceano> findRegex(String value, Pagination pagination);
-//
+
+//    @Regex(where = "oceano .like. @oceano ",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public List<Oceano> regex(String oceano);
+   @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+        public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
+//    
+    
+
 //    @Count()
 //    public Integer count(Document... query);
 //
