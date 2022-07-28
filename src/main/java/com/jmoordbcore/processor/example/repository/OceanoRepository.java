@@ -6,9 +6,11 @@ package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.repository.Count;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordbcore.processor.example.model.Oceano;
 import com.jmoordb.core.annotation.repository.RegexCount;
+import com.jmoordb.core.model.Search;
 
 /**
  *
@@ -63,12 +65,12 @@ public interface OceanoRepository {
 //   @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
   
-    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
-    public Integer countRegex(String oceano);
+//    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
+//    public Integer countRegex(String oceano);
 
-//    @Count()
-//    public Integer count(Document... query);
-//
+    @Count()
+    public Integer count(Search... search);
+
 
 //
 //    @Save
