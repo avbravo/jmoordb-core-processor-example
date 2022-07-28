@@ -4,15 +4,11 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
-import com.jmoordb.core.annotation.enumerations.ActivatePagination;
 import com.jmoordb.core.annotation.enumerations.CaseSensitive;
-import java.util.List;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.enumerations.TypeOrder;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordbcore.processor.example.model.Oceano;
-import com.jmoordb.core.model.Pagination;
-import com.jmoordb.core.annotation.repository.Regex;
+import com.jmoordb.core.annotation.repository.RegexCount;
 
 /**
  *
@@ -64,16 +60,16 @@ public interface OceanoRepository {
 
 //    @Regex(where = "oceano .like. @oceano ",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regex(String oceano);
-   @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-        public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
-//    
-    
+//   @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
+  
+    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
+    public Integer countRegex(String oceano);
 
 //    @Count()
 //    public Integer count(Document... query);
 //
-//    @CountRegex(field = "oceano", caseSensitive = CaseSensitive.NO)
-//    public Integer countRegex(String value);
+
 //
 //    @Save
 //    public Optional<Oceano> save(Oceano oceano);
