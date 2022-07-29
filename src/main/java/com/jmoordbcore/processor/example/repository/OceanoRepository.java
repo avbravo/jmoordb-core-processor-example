@@ -21,6 +21,7 @@ import com.jmoordb.core.model.Pagination;
 import com.jmoordb.core.model.Search;
 import com.jmoordb.core.model.Sorted;
 import com.jmoordbcore.processor.example.model.Oceano;
+import com.jmoordbcore.processor.example.model.Pais;
 import java.util.List;
 import java.util.Optional;
 
