@@ -4,13 +4,10 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
-import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.Count;
+import com.jmoordb.core.annotation.repository.Ping;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordbcore.processor.example.model.Oceano;
-import com.jmoordb.core.annotation.repository.RegexCount;
-import com.jmoordb.core.model.Search;
 
 /**
  *
@@ -68,9 +65,10 @@ public interface OceanoRepository {
 //    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
 //    public Integer countRegex(String oceano);
 
-    @Count()
-    public Integer count(Search... search);
-
+//    @Count()
+//    public Integer count(Search... search);
+    @Ping
+    public Boolean ping();
 
 //
 //    @Save
@@ -82,6 +80,5 @@ public interface OceanoRepository {
 //    @Delete
 //    public Boolean delete(String id);
 //
-//    @Ping
-//    public Boolean ping();
+
 }
