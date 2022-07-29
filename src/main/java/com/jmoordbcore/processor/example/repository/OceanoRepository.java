@@ -5,8 +5,9 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.annotation.repository.Save;
+import com.jmoordbcore.processor.example.model.Idioma;
 import com.jmoordbcore.processor.example.model.Oceano;
 import java.util.List;
 import java.util.Optional;
@@ -17,16 +18,16 @@ import java.util.Optional;
  */
 @Repository(entity = Oceano.class, jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
-public interface OceanoRepository { 
+public interface OceanoRepository {
 
 //    @Query()
 //    public List<Oceano> findAll();
 //
-//    @Query(where = "idoceano .eq. @idoceano")
-//    public Optional<Oceano> findById(String idoceano);
+   @Query(where = "idoceano .eq. @idoceano")
+    public Optional<Oceano> findById(String idoceano);
 //
-//    @Query(where = "oceano .eq. @oceano ")
-//    public List<Oceano> findByOceano(String oceano);
+    @Query(where = "oceano .eq. @oceano ")
+    public List<Oceano> findByOceano(String oceano);
 //
 //    @Query(where = "pagination .skip. @pagination")
 //    public List<Oceano> findAllPagination(Pagination pagination);
@@ -54,38 +55,31 @@ public interface OceanoRepository {
 //
 //    @Query(where = "oceano .eq. @oceano .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
 //    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Sorted sorted);
-
-//    @Lookup
+//   @Lookup
 //    public List<Oceano> lookup(Search search);
     
-
-//    @Regex(where = "oceano .like. @oceano ",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    
+//    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regex(String oceano);
-//   @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination",  caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//
+//    @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
-  
-//    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
-//    public Integer countRegex(String oceano);
 
+//   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
+//    public Integer countRegex(String oceano);
 //    @Count()
 //    public Integer count(Search... search);
 //    @Ping
 //    public Boolean ping();
-
 //  @Update
 //  public Boolean update(Oceano oceano); 
-    
-
-    @Save
-    public Optional<Oceano> save(Oceano oceano); 
-    
-   @Save
-   public Boolean  saveOceano(Oceano oceano); 
-
-
+//    @Save
+//    public Optional<Oceano> save(Oceano oceano); 
+//    
+//   @Save
+//   public Boolean  saveOceano(Oceano oceano); 
 //
 //    @Delete
 //    public Boolean delete(String id);
 //
-
 }
