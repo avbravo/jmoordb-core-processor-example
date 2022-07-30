@@ -21,7 +21,6 @@ import com.jmoordb.core.model.Pagination;
 import com.jmoordb.core.model.Search;
 import com.jmoordb.core.model.Sorted;
 import com.jmoordbcore.processor.example.model.Oceano;
-import com.jmoordbcore.processor.example.model.Pais;
 import java.util.List;
 import java.util.Optional;
 
@@ -72,7 +71,7 @@ public interface OceanoRepository {
     @Lookup
     public List<Oceano> lookup(Search search);
 
-    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
     public List<Oceano> regex(String oceano);
 
     @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
@@ -87,6 +86,7 @@ public interface OceanoRepository {
     @Ping
     public Boolean ping();
 
+ 
     @Update
     public Boolean update(Oceano oceano);
 
@@ -99,7 +99,7 @@ public interface OceanoRepository {
     @Delete(where = "idoceano .eq. @idoceano")
     public Integer delete(String idoceano);
 
-    @Delete(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
+    @Delete(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano ")
     public Integer delete(String idoceano, String oceano);
 
     @Delete()

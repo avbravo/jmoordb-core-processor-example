@@ -20,8 +20,8 @@ import java.util.List;
         database = "{mongodb.database}", collection = "pais")
 public interface PaisRepository {
     
-    @Query()
-    public List<Pais> findAll();
+    @Query(where="idpais .eq. @idpais .and. pais .eq. @pais")
+    public List<Pais> findAll(String idpais, String pais);
     
     @Query(where = "idpais .eq. @idpais .and. pais .eq. @pais .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
     public List<Pais> findByIdoceano(String idpais, String pais, Pagination pagination, Sorted sorted);
