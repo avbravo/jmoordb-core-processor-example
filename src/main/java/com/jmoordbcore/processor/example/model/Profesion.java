@@ -17,8 +17,8 @@ import java.util.List;
 @Entity
 public class Profesion {
 
-    @Id
-    private String idprofesion;
+    @Id(autoincrement = true)
+    private Integer idprofesion;
     @Column
     private String profesion;
     @Referenced(from = "grupoprofesion", localField = "grupoprofesion.idgrupoprofesion", foreignField = "idgrupoprofesion", as = "grupoprofesion")
@@ -27,13 +27,15 @@ public class Profesion {
     public Profesion() {
     }
 
-    public String getIdprofesion() {
+    public Integer getIdprofesion() {
         return idprofesion;
     }
 
-    public void setIdprofesion(String idprofesion) {
+    public void setIdprofesion(Integer idprofesion) {
         this.idprofesion = idprofesion;
     }
+
+   
 
     public String getProfesion() {
         return profesion;
