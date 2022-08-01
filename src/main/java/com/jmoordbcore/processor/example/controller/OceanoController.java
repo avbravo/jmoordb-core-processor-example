@@ -25,7 +25,6 @@ import java.util.Optional;
 public interface OceanoController {
 
     @Rest(  path = "/findall",
-            repositoryMethod =  "{List<Oceano> findAll()}",
             responseType = ResponseType.GET, producesType = {ProducesType.XML, ProducesType.JSON},
             apiDocumentation = {
                 @APIDocumentation(code = "200", description = "The oceanos", producesType = ProducesType.JSON, required = true, implementation = Collection.class, readOnly = true),
@@ -46,7 +45,7 @@ public interface OceanoController {
     public Optional<Oceano> findByIdoceano(String idoceano);
     
     
-    @Rest(  path = "/findall", 
+    @Rest(  path = "/findbyoceano", 
             repositoryMethod =  "{method.similar}",
             responseType = ResponseType.GET, producesType = {ProducesType.XML, ProducesType.JSON},
             apiDocumentation = {
@@ -54,6 +53,6 @@ public interface OceanoController {
                 @APIDocumentation(code = "500", description = "Server unavailable")
             }
     )
-    public List<Oceano> findByIceeano(String idoceano);
+    public List<Oceano> findByOceano(String oceano);
 
 }
