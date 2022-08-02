@@ -19,11 +19,11 @@ import java.util.List;
 @Repository(entity = Pais.class, jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "pais")
 public interface PaisRepository {
-    
-    @Query(where="idpais .eq. @idpais .and. pais .eq. @pais")
-    public List<Pais> findAll(String idpais, String pais);
-    
-    @Query(where = "idpais .eq. @idpais .and. pais .eq. @pais .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
-    public List<Pais> findByIdoceano(String idpais, String pais, Pagination pagination, Sorted sorted);
-    
+//    
+//    @Query(where="idpais .eq. @idpais .and. pais .eq. @pais")
+//    public List<Pais> findAll(String idpais, String pais);
+//    
+//    @Query(where = "idpais .eq. @idpais .and. pais .eq. @pais .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
+//    public List<Pais> findByIdoceano(String idpais, String pais, Pagination pagination, Sorted sorted);
+//    
 }
