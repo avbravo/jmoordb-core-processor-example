@@ -17,6 +17,6 @@ import java.util.Optional;
 @Repository(entity = Profesion.class, database = "{mongodb.database", collection = "profesion", jakartaSource =JakartaSource.JAKARTA )
 public interface ProfesionRepository {
     @Save
-    public Optional<Profesion> save(Profesion profesion);
+   public Optional<Profesion> save(Profesion profesion);
     
 }
