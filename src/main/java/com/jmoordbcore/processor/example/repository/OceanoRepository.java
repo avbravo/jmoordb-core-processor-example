@@ -90,8 +90,8 @@ public interface OceanoRepository {
 //    @Update
 //    public Boolean update(Oceano oceano);
 //
-//    @Save
-//    public Optional<Oceano> save(Oceano oceano);
+    @Save
+    public Optional<Oceano> save(Oceano oceano);
 //
 //    @Save
 //    public Boolean saveOceano(Oceano oceano);
