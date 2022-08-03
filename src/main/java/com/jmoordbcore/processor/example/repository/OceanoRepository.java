@@ -28,7 +28,7 @@ import java.util.Optional;
  *
  * @author avbravo
  */
-@Repository(entity = Oceano.class, jakartaSource = JakartaSource.JAKARTA,
+@Repository(entity = Oceano.class, fieldPk = "idoceano", jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository {
 
