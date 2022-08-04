@@ -35,6 +35,9 @@ public interface OceanoRepository {
 //    @Query()
 //    public List<Oceano> findAll();
 //
+//    @Query()
+//    public Set<Oceano> findAllSet();
+//
 //    @Query(where = "idoceano .eq. @idoceano")
 //    public Optional<Oceano> findById(String idoceano);
 //
@@ -87,9 +90,9 @@ public interface OceanoRepository {
 //    public Boolean ping();
 //
 // 
-//    @Update
-//    public Boolean update(Oceano oceano);
-//
+    @Update
+    public Boolean update(Oceano oceano);
+
     @Save
     public Optional<Oceano> save(Oceano oceano);
 //
