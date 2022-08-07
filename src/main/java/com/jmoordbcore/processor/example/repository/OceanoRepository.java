@@ -5,14 +5,9 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.annotation.repository.Update;
-import com.jmoordb.core.model.Pagination;
-import com.jmoordb.core.model.Sorted;
+import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -22,20 +17,20 @@ import java.util.Set;
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository {
 
-    @Query()
-    public List<Oceano> findAll();
-
-    @Query()
-    public Set<Oceano> findAllSet();
+//    @Query()
+//    public List<Oceano> findAll();
+//
+//    @Query()
+//    public Set<Oceano> findAllSet();
 //
 //    @Query(where = "idoceano .eq. @idoceano")
 //    public Optional<Oceano> findById(String idoceano);
 //
-    @Query(where = "oceano .eq. @oceano ")
-    public List<Oceano> findByOceano(String oceano);
+//    @Query(where = "oceano .eq. @oceano ")
+//    public List<Oceano> findByOceano(String oceano);
 //
-    @Query(where = "pagination .skip. @pagination")
-    public List<Oceano> findAllPagination(Pagination pagination);
+//    @Query(where = "pagination .skip. @pagination")
+//    public List<Oceano> findAllPagination(Pagination pagination);
 //
 //    @Query(where = "sorted .by. @sorted")
 //    public List<Oceano> findAllOrder(Sorted sorted);
@@ -49,8 +44,8 @@ public interface OceanoRepository {
 //    @Query(where = "idoceano .eq. @idoceano .order. sorted .by. @sorted")
 //    public List<Oceano> findAByIdOceanoSorted(String idoceano, Sorted sorted);
 //
-    @Query(where = "idoceano .eq. @idoceano .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
-    public List<Oceano> findAByIdOceanoPaginationSorted(String idoceano, Pagination pagination, Sorted sorted);
+//    @Query(where = "idoceano .eq. @idoceano .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
+//    public List<Oceano> findAByIdOceanoPaginationSorted(String idoceano, Pagination pagination, Sorted sorted);
 
 //    @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @idoceano .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
 //    public List<Oceano> findByIdoceanoAndOceanoPaginationSorted(String idoceano, String oceano, Pagination pagination, Sorted sorted);
@@ -82,15 +77,15 @@ public interface OceanoRepository {
 //    public Boolean ping();
 //
 // 
-    @Update
-    public Boolean update(Oceano oceano);
+//    @Update
+//    public Boolean update(Oceano oceano);
 
 //    @Save
 //    public Optional<Oceano> save(Oceano oceano);
 //
-//    @Save
-//    public Boolean saveOceano(Oceano oceano);
-//
+    @Save
+    public Boolean saveOceano(Oceano oceano);
+
 //    @Delete(where = "idoceano .eq. @idoceano")
 //    public Integer delete(String idoceano);
 //

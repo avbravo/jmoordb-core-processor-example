@@ -5,12 +5,10 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.model.Pagination;
-import com.jmoordb.core.model.Sorted;
+import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordbcore.processor.example.model.Pais;
-import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -19,6 +17,8 @@ import java.util.List;
 @Repository(entity = Pais.class, fieldPk = "idpais",jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "pais")
 public interface PaisRepository {
+    @Save
+   public Optional<Pais> save(Pais pais);
 //    
 //    @Query(where="idpais .eq. @idpais .and. pais .eq. @pais")
 //    public List<Pais> findAll(String idpais, String pais);
