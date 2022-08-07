@@ -8,6 +8,7 @@ import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordbcore.processor.example.model.Oceano;
+import java.util.Optional;
 
 /**
  *
@@ -80,8 +81,8 @@ public interface OceanoRepository {
 //    @Update
 //    public Boolean update(Oceano oceano);
 
-//    @Save
-//    public Optional<Oceano> save(Oceano oceano);
+    @Save
+    public Optional<Oceano> save(Oceano oceano);
 //
     @Save
     public Boolean saveOceano(Oceano oceano);
