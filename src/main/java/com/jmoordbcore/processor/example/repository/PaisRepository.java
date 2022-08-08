@@ -7,6 +7,8 @@ package com.jmoordbcore.processor.example.repository;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.annotation.repository.Save;
+import com.jmoordb.core.annotation.repository.Update;
+import com.jmoordbcore.processor.example.model.Oceano;
 import com.jmoordbcore.processor.example.model.Pais;
 import java.util.Optional;
 
@@ -19,6 +21,8 @@ import java.util.Optional;
 public interface PaisRepository {
     @Save
    public Optional<Pais> save(Pais pais);
+   @Update
+   public Boolean update(Pais pais);
 //    
 //    @Query(where="idpais .eq. @idpais .and. pais .eq. @pais")
 //    public List<Pais> findAll(String idpais, String pais);
