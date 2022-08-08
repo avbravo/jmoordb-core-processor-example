@@ -5,9 +5,16 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.repository.Lookup;
+import com.jmoordb.core.annotation.repository.Ping;
 import com.jmoordb.core.annotation.repository.Repository;
+import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordb.core.annotation.repository.Update;
+import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 /**
  *
@@ -56,10 +63,10 @@ public interface OceanoRepository {
 //    @Query(where = "oceano .eq. @oceano .limit. pagination .skip. @pagination .order. sorted .by. @sorted")
 //    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Sorted sorted);
 //
-//    @Lookup
-//    public List<Oceano> lookup(Search search);
-//    @Lookup
-//    public Set<Oceano> lookupSet(Search search);
+    @Lookup
+    public List<Oceano> lookup(Search search);
+    @Lookup
+    public Set<Oceano> lookupSet(Search search);
 //
 //    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regex(String oceano);
@@ -73,18 +80,18 @@ public interface OceanoRepository {
 //    @Count()
 //    public Integer count(Search... search);
 //
-//   @Ping
-//   public Boolean ping();
+   @Ping
+   public Boolean ping();
 //
 // 
     @Update
     public Boolean update(Oceano oceano);
 
-//    @Save
-//    public Optional<Oceano> save(Oceano oceano);
-//
-//    @Save
-//    public Boolean saveOceano(Oceano oceano);
+    @Save
+    public Optional<Oceano> save(Oceano oceano);
+
+    @Save
+    public Boolean saveOceano(Oceano oceano);
 
 //    @Delete(where = "idoceano .eq. @idoceano")
 //    public Integer delete(String idoceano);

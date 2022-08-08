@@ -19,10 +19,10 @@ import java.util.Optional;
 @Repository(entity = Pais.class, fieldPk = "idpais",jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "pais")
 public interface PaisRepository {
-    @Save
-   public Optional<Pais> save(Pais pais);
-   @Update
-   public Boolean update(Pais pais);
+//    @Save
+//   public Optional<Pais> save(Pais pais);
+//   @Update
+//   public Boolean update(Pais pais);
 //    
 //    @Query(where="idpais .eq. @idpais .and. pais .eq. @pais")
 //    public List<Pais> findAll(String idpais, String pais);
