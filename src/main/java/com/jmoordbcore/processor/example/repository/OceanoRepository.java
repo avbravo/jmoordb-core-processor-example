@@ -5,6 +5,7 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.repository.Ping;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordbcore.processor.example.model.Oceano;
@@ -74,8 +75,8 @@ public interface OceanoRepository {
 //    @Count()
 //    public Integer count(Search... search);
 //
-//    @Ping
-//    public Boolean ping();
+    @Ping
+   public Boolean ping();
 //
 // 
 //    @Update
@@ -83,7 +84,7 @@ public interface OceanoRepository {
 
     @Save
     public Optional<Oceano> save(Oceano oceano);
-//
+
     @Save
     public Boolean saveOceano(Oceano oceano);
 
