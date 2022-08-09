@@ -6,9 +6,15 @@ package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.RegexCount;
+import com.jmoordb.core.annotation.enumerations.TypeOrder;
+import com.jmoordb.core.annotation.repository.Lookup;
+import com.jmoordb.core.annotation.repository.Regex;
 import com.jmoordb.core.annotation.repository.Repository;
+import com.jmoordb.core.model.Pagination;
+import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
+import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -63,14 +69,24 @@ public interface OceanoRepository {
 //
 //    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regex(String oceano);
-//
+    
+    
+//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public List<Oceano> regexSensitiveOrder(String oceano);
+
+//    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public Set<Oceano> regexOceano(String oceano);
+
 //    @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-//    public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
+//    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
+//    @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
+  
 //
 //   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
 //    public Long countRegex(String oceano);
-   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES)
-    public Long countRegexSensitive(String oceano);
+//   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES)
+//    public Long countRegexSensitive(String oceano);
 //
 //    @Count()
 //    public Long count(Search... search);
@@ -87,7 +103,6 @@ public interface OceanoRepository {
 //
 //    @Save
 //    public Boolean saveOceano(Oceano oceano);
-
 //    @Delete(where = "idoceano .eq. @idoceano")
 //    public Integer delete(String idoceano);
 //
