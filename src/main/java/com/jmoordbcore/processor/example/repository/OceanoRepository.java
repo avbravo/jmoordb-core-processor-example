@@ -4,17 +4,14 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
-import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.enumerations.TypeOrder;
-import com.jmoordb.core.annotation.repository.Lookup;
-import com.jmoordb.core.annotation.repository.Regex;
+import com.jmoordb.core.annotation.repository.Delete;
+import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.model.Pagination;
 import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -103,12 +100,15 @@ public interface OceanoRepository {
 //
 //    @Save
 //    public Boolean saveOceano(Oceano oceano);
-//    @Delete(where = "idoceano .eq. @idoceano")
-//    public Integer delete(String idoceano);
-//
-//    @Delete(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano ")
-//    public Integer delete(String idoceano, String oceano);
-//
+
+
+    @Delete(where = "idoceano .eq. @idoceano")
+    public Long delete(String idoceano);
+// 
+//    @Delete(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano .and. date .eq.  @date")
+//    public Long delete(String idoceano, String oceano,Date date);
+
 //    @Delete()
-//    public Integer delete(Search search);
+//    public Long delete(Search search);
+
 }
