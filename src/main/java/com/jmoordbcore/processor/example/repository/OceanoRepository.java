@@ -67,8 +67,10 @@ public interface OceanoRepository {
 //    @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regexPagintarion(String oceano, Pagination pagination);
 //
-   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
-    public Long countRegex(String oceano);
+//   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
+//    public Long countRegex(String oceano);
+   @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES)
+    public Long countRegexSensitive(String oceano);
 //
 //    @Count()
 //    public Long count(Search... search);
