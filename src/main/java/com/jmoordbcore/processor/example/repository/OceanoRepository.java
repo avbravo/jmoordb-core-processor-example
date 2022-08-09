@@ -6,12 +6,9 @@ package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Delete;
-import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -101,22 +98,31 @@ public interface OceanoRepository {
 //    @Save
 //    public Boolean saveOceano(Oceano oceano);
 
-
-    @Delete(where = "idoceano .eq. @idoceano")
-    public Long delete(String idoceano);
-    @Delete(where = "idoceano .ne. @idoceano")
-    public Long deleteNEQ(String idoceano);
-    @Delete(where = "idoceano .lt. @idoceano")
-    public Long deleteLT(String idoceano);
-    @Delete(where = "idoceano .lte. @idoceano")
-    public Long deleteLTE(String idoceano);
-    @Delete(where = "idoceano .gt. @idoceano")
-    public Long deleteGT(String idoceano);
-    @Delete(where = "idoceano .gte. @idoceano")
-    public Long deleteGTE(String idoceano);
+//
+//    @Delete(where = "idoceano .eq. @idoceano")
+//    public Long delete(String idoceano);
+//    @Delete(where = "idoceano .ne. @idoceano")
+//    public Long deleteNEQ(String idoceano);
+//    @Delete(where = "idoceano .lt. @idoceano")
+//    public Long deleteLT(String idoceano);
+//    @Delete(where = "idoceano .lte. @idoceano")
+//    public Long deleteLTE(String idoceano);
+//    @Delete(where = "idoceano .gt. @idoceano")
+//    public Long deleteGT(String idoceano);
+//    @Delete(where = "idoceano .gte. @idoceano")
+//    public Long deleteGTE(String idoceano);
 // 
-//    @Delete(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano .and. date .eq.  @date")
-//    public Long delete(String idoceano, String oceano,Date date);
+   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano ")
+   public Long delete(String idoceano, String oceano);
+   
+//  @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha")
+//   public Long deleteIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
+//   
+//   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha .or. activo .ne. @activo")
+//   public Long deleteIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+//   
+//   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha .or. activo .ne. @activo .and. km .gt. km")
+//   public Long deleteIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo, Integer km);
 
 //    @Delete()
 //    public Long delete(Search search);
