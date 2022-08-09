@@ -104,6 +104,16 @@ public interface OceanoRepository {
 
     @Delete(where = "idoceano .eq. @idoceano")
     public Long delete(String idoceano);
+    @Delete(where = "idoceano .ne. @idoceano")
+    public Long deleteNEQ(String idoceano);
+    @Delete(where = "idoceano .lt. @idoceano")
+    public Long deleteLT(String idoceano);
+    @Delete(where = "idoceano .lte. @idoceano")
+    public Long deleteLTE(String idoceano);
+    @Delete(where = "idoceano .gt. @idoceano")
+    public Long deleteGT(String idoceano);
+    @Delete(where = "idoceano .gte. @idoceano")
+    public Long deleteGTE(String idoceano);
 // 
 //    @Delete(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano .and. date .eq.  @date")
 //    public Long delete(String idoceano, String oceano,Date date);
