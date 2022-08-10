@@ -112,17 +112,17 @@ public interface OceanoRepository {
 //    @Delete(where = "idoceano .gte. @idoceano")
 //    public Long deleteGTE(String idoceano);
 // 
-//   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano ")
-//   public Long delete(String idoceano, String oceano);
-   
- @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha")
-   public Long deleteIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
+// @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano ")
+// public Long delete(String idoceano, String oceano);
+////   
+// @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha")
+//public Long deleteIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
 //   
-//   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha .or. activo .ne. @activo")
+//  @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha .or. activo .ne. @activo")
 //   public Long deleteIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
 //   
-//   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha .or. activo .ne. @activo .and. km .gt. km")
-//   public Long deleteIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo, Integer km);
+   @Delete(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha .or. activo .eq. @activo .and. km .gt. @km")
+   public Long deleteIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
 
 //    @Delete()
 //    public Long delete(Search search);
