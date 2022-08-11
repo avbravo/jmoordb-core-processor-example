@@ -30,8 +30,8 @@ public interface OceanoRepository {
 //
 //    @Query()
 //    public Set<Oceano> findAllSet();
-    @Query()
-    public Stream<Oceano> findAllSteam();
+//    @Query()
+//    public Stream<Oceano> findAllSteam();
 
 //    @Query(where = "idoceano .eq. @idoceano")
 //    public Optional<Oceano> findByIdoceano(String idoceano);
