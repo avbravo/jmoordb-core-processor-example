@@ -92,8 +92,8 @@ public interface OceanoRepository {
 
 //    @Lookup
 //    public Set<Oceano> lookupSet(Search search);
-    @Lookup
-    public Stream<Oceano> lookupStream(Search search);
+//    @Lookup
+//    public Stream<Oceano> lookupStream(Search search);
 
     /**
      * @Regex
@@ -112,7 +112,7 @@ public interface OceanoRepository {
 //    @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
 //
-    @Regex(where = "oceano .like. @oceano .limit. pagination .skip. @pagination", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+    @Regex(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
     public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
 
     /**
