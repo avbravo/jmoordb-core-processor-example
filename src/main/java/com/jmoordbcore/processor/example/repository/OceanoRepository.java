@@ -6,6 +6,7 @@ package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Find;
+import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.model.Pagination;
 import com.jmoordb.core.model.Sorted;
@@ -14,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Stream;
 
 /**
  *
@@ -114,7 +114,7 @@ public interface OceanoRepository {
     
     
 //    @Query()
-//    public List<Oceano> queryAll();
+//   public List<Oceano> queryAll();
 //
 //    @Query()
 //    public Set<Oceano> queryAllSet();
