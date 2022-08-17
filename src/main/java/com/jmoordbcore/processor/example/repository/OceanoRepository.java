@@ -19,14 +19,30 @@ import java.util.List;
 @Repository(entity = Oceano.class, fieldPk = "idoceano", jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository {
+/**
+ * Analizados
+ * 
+ */
+    @Find()
+    public List<Oceano> findAll();
 
-//    @Find()
-//    public List<Oceano> findAll();
-   @Find()
-   public List<Oceano> findAllPagination(Pagination pagination, Sorted sorted);
-//    
-//    @Find()
-//    public List<Oceano> findAllOrder(Sorted sorted);
+    @Find()
+    public List<Oceano> findAllPagination(Pagination pagination);
+
+    @Find()
+    public List<Oceano> findAllSorted(Sorted sorted);
+
+    @Find()
+    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
+    
+    // Este debe dar error ya que contien otro nombre adicional al fundAll que nos Pagination y Sorted.+
+    
+    @Find()
+    public List<Oceano> findAllBynamePagination(Pagination pagination);
+
+    /**
+     * Pendientes
+     */
 //
 //    @Find()
 //    public Set<Oceano> findAllSet();
@@ -66,7 +82,6 @@ public interface OceanoRepository {
 //    @Find()
 //    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmPagination(String idoceano, String oceano, Date fecha, String activo, Integer km, Pagination pagination);
 //
-
 //
 //    @Find()
 //    public List<Oceano> findByIdOceanoSorted(String idoceano, Sorted sorted);
@@ -82,7 +97,6 @@ public interface OceanoRepository {
 //
 //    @Find()
 //    public List<Oceano> findByIdOceanoPaginationSorted(String idoceano, String oceano, Pagination pagination, Sorted sorted);
-
 //    @Query()
 //    public List<Oceano> queryAll();
 //
