@@ -10,7 +10,11 @@ import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.model.Pagination;
 import com.jmoordb.core.model.Sorted;
 import com.jmoordbcore.processor.example.model.Oceano;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  *
@@ -23,80 +27,92 @@ public interface OceanoRepository {
  * Analizados
  * 
  */
-    @Find()
-    public List<Oceano> findAll();
-
-    @Find()
-    public List<Oceano> findAllPagination(Pagination pagination);
-
-    @Find()
-    public List<Oceano> findAllSorted(Sorted sorted);
-
-    @Find()
-    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
+//    @Find()
+//    public List<Oceano> findAll();
+//
+//    @Find()
+//    public List<Oceano> findAllPagination(Pagination pagination);
+//
+//    @Find()
+//   public List<Oceano> findAllSorted(Sorted sorted);
+//
+//    @Find()
+//    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
     
-    // Este debe dar error ya que contien otro nombre adicional al fundAll que nos Pagination y Sorted.+
     
-    @Find()
-    public List<Oceano> findAllBynamePagination(Pagination pagination);
+
 
     /**
      * Pendientes
      */
-//
+
+    @Find()
+    public Set<Oceano> findAll();
+
 //    @Find()
-//    public Set<Oceano> findAllSet();
+//   public Stream<Oceano> findAll();
+
+
+   @Find()
+   public Optional<Oceano> findByIdOceanoAndOceano(String id, String oceano); 
+  
+   
+   @Find()
+   public Optional<Oceano> findByIdoceano(String idoceano);
+
+    @Find()
+    public List<Oceano> findByOceano(String oceano);
 //
-//    @Find()
-//    public Stream<Oceano> findAllSteam();
+    @Find()
+    public Set<Oceano> findByOceanoSet(String oceano);
+
+    @Find()
+    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
 //
-//   @Find()
-//    public Optional<Oceano> findByIdoceano(String idoceano);
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
 //
-//    @Find()
-//    public List<Oceano> findByOceano(String oceano);
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+
+
 //
-//    @Find()
-//    public Set<Oceano> findByOceanoSet(String oceano);
+    @Find()
+    public List<Oceano> findByIdOceanoPagination(String idoceano, Pagination pagination);
 //
-//    @Find()
-//    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
-//
-//
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoPagination(String idoceano, Pagination pagination);
-//
-//    @Find()
-//    public List<Oceano> findByIdoceanoAndOceanoPagination(String idoceano, String oceano, Pagination pagination);
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmPagination(String idoceano, String oceano, Date fecha, String activo, Integer km, Pagination pagination);
-//
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoSorted(String idoceano, Sorted sorted);
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmSorted(String idoceano, String oceano, Date fecha, String activo, Integer km, Sorted sorted);
-//
-//    @Find()
-//    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
-//
-//    @Find()
-//    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination, Sorted sorted);
-//
-//    @Find()
-//    public List<Oceano> findByIdOceanoPaginationSorted(String idoceano, String oceano, Pagination pagination, Sorted sorted);
+    @Find()
+    public List<Oceano> findByIdoceanoAndOceanoPagination(String idoceano, String oceano, Pagination pagination);
+
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmPagination(String idoceano, String oceano, Date fecha, String activo, Integer km, Pagination pagination);
+   
+    
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmPaginationSorted(String idoceano, String oceano, Date fecha, String activo, Integer km, Pagination pagination, Sorted sorted);
+    
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmOrIdiomaNotEqualPaginationSorted(String idoceano, String oceano, Date fecha, String activo, Integer km, String idioma, Pagination pagination, Sorted sorted);
+
+
+    @Find()
+    public List<Oceano> findByIdOceanoSorted(String idoceano, Sorted sorted);
+
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmSorted(String idoceano, String oceano, Date fecha, String activo, Integer km, Sorted sorted);
+
+    @Find()
+    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
+
+    @Find()
+    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination);
+
+    @Find()
+    public List<Oceano> findByIdOceanoPaginationSorted(String idoceano, Pagination pagination, Sorted sorted);
+    
+    
 //    @Query()
 //    public List<Oceano> queryAll();
 //
