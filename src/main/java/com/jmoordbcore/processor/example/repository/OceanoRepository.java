@@ -4,14 +4,11 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
-import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.enumerations.TypeOrder;
-import com.jmoordb.core.annotation.repository.Find;
-import com.jmoordb.core.annotation.repository.Regex;
+import com.jmoordb.core.annotation.repository.DeleteBy;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.List;
+import java.util.Date;
 
 /**
  *
@@ -25,14 +22,14 @@ public interface OceanoRepository {
      * Analizados
      *
      */
-    @Find()
-    public List<Oceano> findAll();
-//
 //    @Find()
-//    public Set<Oceano> findAll();
+//    public List<Oceano> findAll();
 //
-//    @Find()
-//    public Stream<Oceano> findAll();
+////    @Find()
+////    public Set<Oceano> findAll();
+////
+////    @Find()
+////    public Stream<Oceano> findAll();
 //
 //    @Find()
 //    public List<Oceano> findAllPagination(Pagination pagination);
@@ -187,8 +184,8 @@ public interface OceanoRepository {
 //    /**
 //     * @Regex
 //     */
-    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-    public List<Oceano> regex(String oceano);
+//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public List<Oceano> regex(String oceano);
 //    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public Stream<Oceano> regexStream(String oceano);
 //
@@ -241,6 +238,7 @@ public interface OceanoRepository {
 //     * @Delete @param idoceano
 //     * @return
 //     */
+
 //    @Delete(where = "idoceano .eq. @idoceano")
 //    public Long delete(String idoceano);
 //
@@ -273,4 +271,35 @@ public interface OceanoRepository {
 //
 //    @Delete()
 //    public Long delete(Search search);
+    
+    
+Implementar mas condiciones como en Find
+Crear @CountBy
+        
+
+    
+   @DeleteBy
+    public Long deleteByIdOceanoAndOceanoNotEqualDate(String idoceano, String oceano, Date date);
+//    
+//    @DeleteBy
+//    public Long deleteByIdOceano(String idoceano);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoNotEqual(String idoceano);
+//
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceano(String idoceano, String oceano);
+//    
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotFechaGreaterThan(String idoceano, String oceano, Date fecha);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+
+
 }
