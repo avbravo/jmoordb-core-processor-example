@@ -8,6 +8,8 @@ import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Query;
 import com.jmoordb.core.annotation.repository.Repository;
+import com.jmoordb.core.model.Pagination;
+import com.jmoordb.core.model.Sorted;
 import com.jmoordbcore.processor.example.model.Oceano;
 import java.util.Date;
 import java.util.List;
@@ -19,10 +21,11 @@ import java.util.List;
 @Repository(entity = Oceano.class, fieldPk = "idoceano", jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository {
-/**
- * Analizados
- * 
- */
+
+    /**
+     * Analizados
+     *
+     */
 //    @Find()
 //    public List<Oceano> findAll();
 ////
@@ -35,7 +38,6 @@ public interface OceanoRepository {
 //    @Find()
 //    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
 //    
-    
 
 //    @Find()
 //    public Set<Oceano> findAll();
@@ -56,43 +58,51 @@ public interface OceanoRepository {
 //    public Set<Oceano> findByOceano(String oceano);
 //    @Find()
 //    public Stream<Oceano> findByOceano(String oceano);
-
     /**
      * Pendientes
      */
-//    @Find()
-//    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
-    
-    
+    @Find()
+    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
+
     @Find()
     public List<Oceano> findByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
- //    @Find()
-//    public List<Oceano> findByIdOceanoPagination(String idoceano, Pagination pagination);
 
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrKmLessthan(String idoceano, String oceano, Date fecha, Integer km);
+
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaGreaterThanAndFechaLessThanOrKmLessthan(String idoceano, String oceano, Date fecha, Date fecha2, Integer km);
+
+//
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoAndFechaGreaterThan(String idoceano, String oceano, Date fecha);
+//
+
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+
+    @Find()
+    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+
+//
+// Sorted
+//    
+//        @Find()
+//    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
+//
+//    @Find()
+//    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination);
+//
+//    @Find()
+//    public List<Oceano> findByIdOceanoPagination(String idoceano, Pagination pagination);
+//
 //    @Find()
 //    public List<Oceano> findByIdOceanoSorted(String idoceano, Sorted sorted);
-    
-
-    
+//    
+//    
 //    @Find()
 //    public List<Oceano> findByIdOceanoPaginationSorted(String idoceano, Pagination pagination, Sorted sorted);
-//    
-    
-    
-////
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
-////
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
 //
-//    @Find()
-//    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
-//
-//
-////
-
-////
 //    @Find()
 //    public List<Oceano> findByIdoceanoAndOceanoPagination(String idoceano, String oceano, Pagination pagination);
 //
@@ -107,18 +117,10 @@ public interface OceanoRepository {
 //    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmOrIdiomaNotEqualPaginationSorted(String idoceano, String oceano, Date fecha, String activo, Integer km, String idioma, Pagination pagination, Sorted sorted);
 //
 //
-
+//
 //
 //    @Find()
 //    public List<Oceano> findByIdOceanoAndOceanoNotFechaOrActivoAndKmSorted(String idoceano, String oceano, Date fecha, String activo, Integer km, Sorted sorted);
-//
-//    @Find()
-//    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
-//
-//    @Find()
-//    public List<Oceano> findByOceanoPagination(String oceano, Pagination pagination);
-//
-
 //    @Query()
 //   public List<Oceano> queryAll();
 //
@@ -137,9 +139,10 @@ public interface OceanoRepository {
 //    @Query(where = "oceano .eq. @oceano ")
 //    public Set<Oceano> queryByOceanoSet(String oceano);
 //
-   @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
+    @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
     public List<Oceano> queryByIdoceanoAndOceano(String idoceano, String oceano);
 //
+
     @Query(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha")
     public List<Oceano> queryByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
 //
