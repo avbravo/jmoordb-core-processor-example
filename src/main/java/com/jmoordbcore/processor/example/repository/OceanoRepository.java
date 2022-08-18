@@ -60,11 +60,11 @@ public interface OceanoRepository {
     /**
      * Pendientes
      */
+//    @Find()
+//    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
+    
+    
     @Find()
-    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
-    
-    
-      @Find()
     public List<Oceano> findByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
  //    @Find()
 //    public List<Oceano> findByIdOceanoPagination(String idoceano, Pagination pagination);
