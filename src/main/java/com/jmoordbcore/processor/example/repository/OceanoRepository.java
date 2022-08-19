@@ -4,11 +4,16 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
+import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.DeleteBy;
+import com.jmoordb.core.annotation.enumerations.TypeOrder;
+import com.jmoordb.core.annotation.repository.Regex;
 import com.jmoordb.core.annotation.repository.Repository;
+import com.jmoordb.core.model.Pagination;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.Date;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  *
@@ -44,6 +49,10 @@ public interface OceanoRepository {
 //
 //   
 //
+//    @Find()
+//    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
+//    @Find()
+//    public Optional<Oceano> findByIdoceano(String idoceano);
 //    @Find()
 //    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
 //
@@ -184,22 +193,22 @@ public interface OceanoRepository {
 //    /**
 //     * @Regex
 //     */
-//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-//    public List<Oceano> regex(String oceano);
-//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-//    public Stream<Oceano> regexStream(String oceano);
-//
-//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-//    public List<Oceano> regexSensitiveOrder(String oceano);
-//
-//    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-//    public Set<Oceano> regexOceano(String oceano);
-//
-//    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-//    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
-//
-//    @Regex(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-//    public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
+    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    public List<Oceano> regex(String oceano);
+    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    public Stream<Oceano> regexStream(String oceano);
+
+    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+    public List<Oceano> regexSensitiveOrder(String oceano);
+
+    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+    public Set<Oceano> regexOceano(String oceano);
+
+    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
+
+    @Regex(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+    public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
 //
 //    /**
 //     * @RegexCoutn
@@ -276,28 +285,56 @@ public interface OceanoRepository {
 //Implementar mas condiciones como en Find
 //Crear @CountBy
         
-
-    
-   @DeleteBy
-    public Long deleteByIdOceanoAndOceanoNotEqualAndDate(String idoceano, String oceano, Date date);
+/**
+ * @DeleteBy
+ * 
+ */
 //    
-    @DeleteBy
-    public Long deleteByIdOceano(String idoceano);
+//   @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotEqualAndDate(String idoceano, String oceano, Date date);
+//  
+//    @DeleteBy
+//    public Long deleteByIdOceano(String idoceano);
 //
-    @DeleteBy
-    public Long deleteByIdOceanoNotEqual(String idoceano);
-
-    @DeleteBy
-    public Long deleteByIdOceanoAndOceano(String idoceano, String oceano);
-
-    @DeleteBy
-    public Long deleteByIdOceanoAndOceanoNotFechaGreaterThan(String idoceano, String oceano, Date fecha);
-
-    @DeleteBy
-    public Long deleteByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
-
-    @DeleteBy
-    public Long deleteByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+//    @DeleteBy
+//    public Long deleteByIdOceanoNotEqual(String idoceano);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceano(String idoceano, String oceano);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotFechaGreaterThan(String idoceano, String oceano, Date fecha);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+//
+//    @DeleteBy
+//    public Long deleteByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+    
+    /**
+     * CountBy
+     *
+     */
+//    @CountBy
+//    public Long countByIdOceanoAndOceanoNotEqualAndDate(String idoceano, String oceano, Date date);
+//
+//    @CountBy
+//    public Long countByIdOceano(String idoceano);
+//
+//    @CountBy
+//    public Long countByIdOceanoNotEqual(String idoceano);
+//
+//    @CountBy
+//    public Long countByIdOceanoAndOceano(String idoceano, String oceano);
+//
+//    @CountBy
+//    public Long countByIdOceanoAndOceanoNotFechaGreaterThan(String idoceano, String oceano, Date fecha);
+//
+//    @CountBy
+//    public Long countByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+//
+//    @CountBy
+//    public Long countByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
 
 
 }
