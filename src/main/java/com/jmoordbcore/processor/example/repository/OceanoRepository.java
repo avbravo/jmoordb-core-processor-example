@@ -7,6 +7,7 @@ package com.jmoordbcore.processor.example.repository;
 import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.enumerations.TypeOrder;
+import com.jmoordb.core.annotation.repository.LikeBy;
 import com.jmoordb.core.annotation.repository.Regex;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.model.Pagination;
@@ -140,7 +141,6 @@ public interface OceanoRepository {
 //    @Query(where = "idoceano .eq. @idoceano .and. oceano .eq. @oceano")
 //    public List<Oceano> queryByIdoceanoAndOceano(String idoceano, String oceano);
 //
-
 //    @Query(where = "idoceano .eq. @idoceano .and. oceano .ne. @oceano .not. fecha .gt. @fecha")
 //    public List<Oceano> queryByIdOceanoAndOceanoNotFecha(String idoceano, String oceano, Date fecha);
 //
@@ -195,18 +195,18 @@ public interface OceanoRepository {
 //     */
     @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
     public List<Oceano> regex(String oceano);
-    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-    public Stream<Oceano> regexStream(String oceano);
-
-    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-    public List<Oceano> regexSensitiveOrder(String oceano);
-
-    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-    public Set<Oceano> regexOceano(String oceano);
-
-    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
-
+//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public Stream<Oceano> regexStream(String oceano);
+//
+//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public List<Oceano> regexSensitiveOrder(String oceano);
+//
+//    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public Set<Oceano> regexOceano(String oceano);
+//
+//    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
+//
     @Regex(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
     public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
 //
@@ -214,10 +214,10 @@ public interface OceanoRepository {
 //     * @RegexCoutn
 //     */
 //    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.NO)
-//    public Long countRegex(String oceano);
+//    public Long regexCountOceano(String oceano);
 //
 //    @RegexCount(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES)
-//    public Long countRegexSensitive(String oceano);
+//    public Long regexCountSensitive(String oceano);
 //
 //    /**
 //     * @Count
@@ -247,7 +247,6 @@ public interface OceanoRepository {
 //     * @Delete @param idoceano
 //     * @return
 //     */
-
 //    @Delete(where = "idoceano .eq. @idoceano")
 //    public Long delete(String idoceano);
 //
@@ -280,15 +279,12 @@ public interface OceanoRepository {
 //
 //    @Delete()
 //    public Long delete(Search search);
-    
-    
 //Implementar mas condiciones como en Find
 //Crear @CountBy
-        
-/**
- * @DeleteBy
- * 
- */
+    /**
+     * @DeleteBy
+     *
+     */
 //    
 //   @DeleteBy
 //    public Long deleteByIdOceanoAndOceanoNotEqualAndDate(String idoceano, String oceano, Date date);
@@ -310,7 +306,6 @@ public interface OceanoRepository {
 //
 //    @DeleteBy
 //    public Long deleteByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
-    
     /**
      * CountBy
      *
@@ -335,6 +330,23 @@ public interface OceanoRepository {
 //
 //    @CountBy
 //    public Long countByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+    /**
+     * @LikeBy
+     */
+    @LikeBy(caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    public List<Oceano> likeByOceano(String oceano);
+
+    @LikeBy(caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+    public Stream<Oceano> likeByIdOceano(String idoceano);
+
+    @LikeBy(caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+    public List<Oceano> likeByIdioma(String oceano);
+
+    @LikeBy(caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.ASC)
+    public Set<Oceano> likeByOceanoPagination(String oceano,Pagination pagination);
+
+
+    
 
 
 }
