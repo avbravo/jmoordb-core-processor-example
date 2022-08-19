@@ -273,33 +273,31 @@ public interface OceanoRepository {
 //    public Long delete(Search search);
     
     
-Implementar mas condiciones como en Find
-Crear @CountBy
+//Implementar mas condiciones como en Find
+//Crear @CountBy
         
 
     
    @DeleteBy
-    public Long deleteByIdOceanoAndOceanoNotEqualDate(String idoceano, String oceano, Date date);
+    public Long deleteByIdOceanoAndOceanoNotEqualAndDate(String idoceano, String oceano, Date date);
 //    
-//    @DeleteBy
-//    public Long deleteByIdOceano(String idoceano);
+    @DeleteBy
+    public Long deleteByIdOceano(String idoceano);
 //
-//    @DeleteBy
-//    public Long deleteByIdOceanoNotEqual(String idoceano);
-//
-//
-//    @DeleteBy
-//    public Long deleteByIdOceanoAndOceano(String idoceano, String oceano);
-//    
-//
-//    @DeleteBy
-//    public Long deleteByIdOceanoAndOceanoNotFechaGreaterThan(String idoceano, String oceano, Date fecha);
-//
-//    @DeleteBy
-//    public Long deleteByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
-//
-//    @DeleteBy
-//    public Long deleteByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
+    @DeleteBy
+    public Long deleteByIdOceanoNotEqual(String idoceano);
+
+    @DeleteBy
+    public Long deleteByIdOceanoAndOceano(String idoceano, String oceano);
+
+    @DeleteBy
+    public Long deleteByIdOceanoAndOceanoNotFechaGreaterThan(String idoceano, String oceano, Date fecha);
+
+    @DeleteBy
+    public Long deleteByIdOceanoAndOceanoNotFechaOrActivo(String idoceano, String oceano, Date fecha, String activo);
+
+    @DeleteBy
+    public Long deleteByIdOceanoAndOceanoNotFechaOrActivoAndKm(String idoceano, String oceano, Date fecha, String activo, Integer km);
 
 
 }
