@@ -193,8 +193,8 @@ public interface OceanoRepository {
 //    /**
 //     * @Regex
 //     */
-    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-    public List<Oceano> regex(String oceano);
+//    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public List<Oceano> regex(String oceano);
 //    @Regex(where = "oceano .like. @oceano  ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public Stream<Oceano> regexStream(String oceano);
 //
@@ -207,8 +207,8 @@ public interface OceanoRepository {
 //    @Regex(where = "oceano .like. @oceano ", caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
 //    public List<Oceano> regexPagintation(String oceano, Pagination pagination);
 //
-    @Regex(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-    public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
+//    @Regex(where = "oceano .like. @oceano", caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public List<Oceano> regexPagintationSorted(String oceano, Pagination pagination);
 //
 //    /**
 //     * @RegexCoutn
