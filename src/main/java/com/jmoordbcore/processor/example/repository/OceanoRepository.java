@@ -7,14 +7,11 @@ package com.jmoordbcore.processor.example.repository;
 import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.enumerations.TypeOrder;
-import com.jmoordb.core.annotation.repository.LikeBy;
-import com.jmoordb.core.annotation.repository.Regex;
+import com.jmoordb.core.annotation.repository.CountLikeBy;
+import com.jmoordb.core.annotation.repository.RegexCount;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.model.Pagination;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Stream;
 
 /**
  *
@@ -333,20 +330,30 @@ public interface OceanoRepository {
     /**
      * @LikeBy
      */
-    @LikeBy(caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-    public List<Oceano> likeByOceano(String oceano);
+//    @LikeBy(caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public List<Oceano> likeByOceano(String oceano);
+//
+//    @LikeBy(caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
+//    public Stream<Oceano> likeByIdOceano(String idoceano);
+//
+//    @LikeBy(caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
+//    public List<Oceano> likeByIdioma(String oceano);
+//
+//    @LikeBy(caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.ASC)
+//    public Set<Oceano> likeByOceanoPagination(String oceano, Pagination pagination);
 
-    @LikeBy(caseSensitive = CaseSensitive.NO, typeOrder = TypeOrder.ASC)
-    public Stream<Oceano> likeByIdOceano(String idoceano);
+    /*
+    @CountLikeBy
+     */
+    @CountLikeBy(caseSensitive = CaseSensitive.NO)
+    public Long countLikeByOceano(String oceano);
 
-    @LikeBy(caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.DESC)
-    public List<Oceano> likeByIdioma(String oceano);
+    @CountLikeBy(caseSensitive = CaseSensitive.NO)
+    public Long countLikeByIdOceano(String idoceano);
 
-    @LikeBy(caseSensitive = CaseSensitive.YES, typeOrder = TypeOrder.ASC)
-    public Set<Oceano> likeByOceanoPagination(String oceano,Pagination pagination);
+    @CountLikeBy(caseSensitive = CaseSensitive.YES)
+    public Long countLikeByIdioma(String oceano);
 
-
-    
-
+ 
 
 }
