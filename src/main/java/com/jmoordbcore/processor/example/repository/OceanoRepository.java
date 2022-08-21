@@ -4,14 +4,14 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
-import com.jmoordb.core.annotation.enumerations.CaseSensitive;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.enumerations.TypeOrder;
-import com.jmoordb.core.annotation.repository.CountLikeBy;
-import com.jmoordb.core.annotation.repository.RegexCount;
+import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.model.Pagination;
+import com.jmoordb.core.model.Sorted;
 import com.jmoordbcore.processor.example.model.Oceano;
+import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -25,38 +25,38 @@ public interface OceanoRepository {
      * Analizados
      *
      */
+    @Find()
+    public List<Oceano> findAll();
+
 //    @Find()
-//    public List<Oceano> findAll();
-//
-////    @Find()
-////    public Set<Oceano> findAll();
-////
-////    @Find()
-////    public Stream<Oceano> findAll();
+//    public Set<Oceano> findAll();
 //
 //    @Find()
-//    public List<Oceano> findAllPagination(Pagination pagination);
-////
+//    public Stream<Oceano> findAll();
+
+    @Find()
+    public List<Oceano> findAllPagination(Pagination pagination);
 //
-//    @Find()
-//    public List<Oceano> findAllSorted(Sorted sorted);
-////
+
+    @Find()
+    public List<Oceano> findAllSorted(Sorted sorted);
 //
-//    @Find()
-//    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
-//
-//   
-//
+
+    @Find()
+    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
+
+   
+
+    @Find()
+    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
+    @Find()
+    public Optional<Oceano> findByIdoceano(String idoceano);
 //    @Find()
 //    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
-//    @Find()
-//    public Optional<Oceano> findByIdoceano(String idoceano);
-//    @Find()
-//    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
+
+    @Find()
+    public List<Oceano> findByOceano(String oceano);
 //
-//    @Find()
-//    public List<Oceano> findByOceano(String oceano);
-////
 //
 //    @Find()
 //    public Set<Oceano> findByOceano(String oceano);
@@ -345,14 +345,14 @@ public interface OceanoRepository {
     /*
     @CountLikeBy
      */
-    @CountLikeBy(caseSensitive = CaseSensitive.NO)
-    public Long countLikeByOceano(String oceano);
-
-    @CountLikeBy(caseSensitive = CaseSensitive.NO)
-    public Long countLikeByIdOceano(String idoceano);
-
-    @CountLikeBy(caseSensitive = CaseSensitive.YES)
-    public Long countLikeByIdioma(String oceano);
+//    @CountLikeBy(caseSensitive = CaseSensitive.NO)
+//    public Long countLikeByOceano(String oceano);
+//
+//    @CountLikeBy(caseSensitive = CaseSensitive.NO)
+//    public Long countLikeByIdOceano(String idoceano);
+//
+//    @CountLikeBy(caseSensitive = CaseSensitive.YES)
+//    public Long countLikeByIdioma(String oceano);
 
  
 
