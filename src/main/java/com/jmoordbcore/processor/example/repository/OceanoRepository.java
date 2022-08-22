@@ -25,37 +25,37 @@ public interface OceanoRepository {
      * Analizados
      *
      */
-    @Find()
-    public List<Oceano> findAll();
+//    @Find()
+//    public List<Oceano> findAll();
 
 //    @Find()
 //    public Set<Oceano> findAll();
 //
 //    @Find()
 //    public Stream<Oceano> findAll();
+//
+//    @Find()
+//    public List<Oceano> findAllPagination(Pagination pagination);
+////
 
-    @Find()
-    public List<Oceano> findAllPagination(Pagination pagination);
+//    @Find()
+//    public List<Oceano> findAllSorted(Sorted sorted);
 //
 
-    @Find()
-    public List<Oceano> findAllSorted(Sorted sorted);
+//    @Find()
+//    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
 //
-
-    @Find()
-    public List<Oceano> findAllPaginationSorted(Pagination pagination, Sorted sorted);
-
-   
-
-    @Find()
-    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
-    @Find()
-    public Optional<Oceano> findByIdoceano(String idoceano);
+//   
+//
 //    @Find()
 //    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
-
-    @Find()
-    public List<Oceano> findByOceano(String oceano);
+//    @Find()
+//    public Optional<Oceano> findByIdoceano(String idoceano);
+////    @Find()
+////    public Optional<Oceano> findByIdoceanoNotEqual(String idoceano);
+//
+//    @Find()
+//    public List<Oceano> findByOceano(String oceano);
 //
 //
 //    @Find()
