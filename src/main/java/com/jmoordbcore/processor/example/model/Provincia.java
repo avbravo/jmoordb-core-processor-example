@@ -16,13 +16,13 @@ import java.util.List;
  */
 @Entity
 public class Provincia {
+
     @Id
     private String idprovincia;
     @Column
     private String provincia;
-    @Referenced(from = "provincia",localField = "provincia.idprovincia",foreignField = "idprovincia", as="provincia")
- private Pais pais;
-
+    @Referenced(from = "provincia", localField = "provincia.idprovincia", foreignField = "idprovincia", as = "provincia")
+    private Pais pais;
 
     public Provincia() {
     }
@@ -51,9 +51,4 @@ public class Provincia {
         this.pais = pais;
     }
 
-    
-
-    
-    
-    
 }

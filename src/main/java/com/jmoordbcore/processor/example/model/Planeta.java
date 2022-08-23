@@ -7,6 +7,7 @@ package com.jmoordbcore.processor.example.model;
 import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Entity;
 import com.jmoordb.core.annotation.Id;
+import com.jmoordb.core.annotation.repository.Find;
 
 
 
@@ -20,7 +21,7 @@ public class Planeta {
     @Id
     private String idplaneta;
     @Column
-      private String planeta;
+     private String planeta;
 
     public Planeta() {
     }

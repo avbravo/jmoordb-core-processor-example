@@ -5,13 +5,12 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.Find;
+import com.jmoordb.core.annotation.repository.Lookup;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.model.Pagination;
-import com.jmoordb.core.model.Sorted;
+import com.jmoordb.core.annotation.repository.Update;
+import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
 import java.util.List;
-import java.util.Optional;
 
 /**
  *
@@ -170,7 +169,7 @@ public interface OceanoRepository {
 //
 //    @Query()
 //    public List<Oceano> queryAllPaginationSorted(Pagination pagination, Sorted sorted);
-//
+
 //    @Query(where = "oceano .eq. @oceano")
 //    public List<Oceano> queryByOceanoPagination(String oceano, Pagination pagination, Sorted sorted);
 //
@@ -228,8 +227,8 @@ public interface OceanoRepository {
 //    /**
 //     * @Ping
 //     */
-//    @Update
-//    public Boolean update(Oceano oceano);
+    @Update
+    public Boolean update(Oceano oceano);
 //
 //    /**
 //     * @Save
@@ -282,6 +281,8 @@ public interface OceanoRepository {
      * @DeleteBy
      *
      */
+//@DeleteBy
+//    public Long deleteByIdOceanoAndKm(String idoceano, Integer km);
 //    
 //   @DeleteBy
 //    public Long deleteByIdOceanoAndOceanoNotEqualAndDate(String idoceano, String oceano, Date date);
