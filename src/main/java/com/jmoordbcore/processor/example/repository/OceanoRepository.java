@@ -5,12 +5,11 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.Lookup;
+import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.annotation.repository.Update;
-import com.jmoordb.core.model.Search;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -57,8 +56,8 @@ public interface OceanoRepository {
 //    public List<Oceano> findByOceano(String oceano);
 //
 //
-//    @Find()
-//    public Set<Oceano> findByOceano(String oceano);
+    @Find()
+    public Set<Oceano> findByOceano(String oceano);
 //
 //    @Find()
 //    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
