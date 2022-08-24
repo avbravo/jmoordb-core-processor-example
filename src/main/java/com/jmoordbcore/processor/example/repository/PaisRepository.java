@@ -8,8 +8,10 @@ import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordb.core.annotation.repository.Update;
+import com.jmoordb.core.repository.RepositoryCrud;
 import com.jmoordbcore.processor.example.model.Oceano;
 import com.jmoordbcore.processor.example.model.Pais;
+import com.jmoordbcore.processor.example.model.Profesion;
 import java.util.Optional;
 
 /**
@@ -18,7 +20,7 @@ import java.util.Optional;
  */
 @Repository(entity = Pais.class, fieldPk = "idpais",jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "pais")
-public interface PaisRepository {
+public interface PaisRepository extends RepositoryCrud<Pais, String>{
 //    @Save
 //   public Optional<Pais> save(Pais pais);
 //   @Update

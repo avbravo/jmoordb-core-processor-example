@@ -7,9 +7,9 @@ package com.jmoordbcore.processor.example.repository;
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Repository;
-import com.jmoordb.core.annotation.repository.Update;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.Set;
+import java.util.List;
+import com.jmoordb.core.repository.RepositoryCrud;
 
 /**
  *
@@ -17,7 +17,7 @@ import java.util.Set;
  */
 @Repository(entity = Oceano.class, fieldPk = "idoceano", jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
-public interface OceanoRepository {
+public interface OceanoRepository extends RepositoryCrud<Oceano, String>{
 
     /**
      * Analizados
@@ -56,8 +56,8 @@ public interface OceanoRepository {
 //    public List<Oceano> findByOceano(String oceano);
 //
 //
-    @Find()
-    public Set<Oceano> findByOceano(String oceano);
+//    @Find()
+//    public Set<Oceano> findByOceano(String oceano);
 //
 //    @Find()
 //    public List<Oceano> findByIdoceanoAndOceano(String idoceano, String oceano);
@@ -226,8 +226,8 @@ public interface OceanoRepository {
 //    /**
 //     * @Ping
 //     */
-    @Update
-    public Boolean update(Oceano oceano);
+//    @Update
+//    public Boolean update(Oceano oceano);
 //
 //    /**
 //     * @Save
