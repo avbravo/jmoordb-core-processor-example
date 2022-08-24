@@ -5,10 +5,9 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
-import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Repository;
+import com.jmoordb.core.annotation.repository.Save;
 import com.jmoordbcore.processor.example.model.Oceano;
-import java.util.List;
 import com.jmoordb.core.repository.RepositoryCrud;
 
 /**
@@ -235,8 +234,8 @@ public interface OceanoRepository extends RepositoryCrud<Oceano, String>{
 //    @Save
 //    public Optional<Oceano> save(Oceano oceano);
 //
-//    @Save
-//    public Boolean saveOceano(Oceano oceano);
+    @Save
+    public Boolean saveOceano(Oceano oceano);
 //
 //    /**
 //     * @Delete @param idoceano

@@ -17,7 +17,7 @@ import com.jmoordb.core.annotation.Referenced;
 public class Provincia {
     @Id
     @Column
-    private Integer idprovincia;
+    private Long idprovincia;
     @Column
     private String provincia;
      @Referenced(from = "pais",localField = "idpais",foreignField = "pais.idpais",as="pais")
@@ -26,13 +26,15 @@ public class Provincia {
     public Provincia() {
     }
 
-    public Integer getIdprovincia() {
+    public Long getIdprovincia() {
         return idprovincia;
     }
 
-    public void setIdprovincia(Integer idprovincia) {
+    public void setIdprovincia(Long idprovincia) {
         this.idprovincia = idprovincia;
     }
+
+    
 
     public String getProvincia() {
         return provincia;
