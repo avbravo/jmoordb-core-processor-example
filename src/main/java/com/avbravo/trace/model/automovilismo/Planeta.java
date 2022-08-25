@@ -12,7 +12,7 @@ import com.jmoordb.core.annotation.Id;
  *
  * @author avbravo
  */
-@Entity
+//@Entity
 public class Planeta {
     @Id
     @Column

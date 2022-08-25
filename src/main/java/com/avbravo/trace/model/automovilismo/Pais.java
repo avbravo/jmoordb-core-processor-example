@@ -14,7 +14,7 @@ import com.jmoordb.core.annotation.enumerations.TypePK;
  *
  * @author avbravo
  */
-@Entity
+//@Entity
 public class Pais {
     @Id
     @Column
