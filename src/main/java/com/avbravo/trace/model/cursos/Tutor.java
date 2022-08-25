@@ -4,6 +4,7 @@
  */
 package com.avbravo.trace.model.cursos;
 
+import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Id;
 
 /**
@@ -13,6 +14,7 @@ import com.jmoordb.core.annotation.Id;
 public class Tutor {
     @Id
     private String idtutor;
+    @Column
     private String tutor;
 
     public Tutor() {

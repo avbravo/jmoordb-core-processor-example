@@ -7,6 +7,7 @@ package com.avbravo.trace.model.cursos;
 import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Id;
 import com.jmoordb.core.annotation.Referenced;
+import com.jmoordb.core.annotation.enumerations.TypePK;
 
 /**
  *
@@ -17,7 +18,7 @@ public class Video {
     private String idvideo;
     @Column
     private String video;
-   @Referenced(from = "planeta",localField = "idplaneta",foreignField = "planeta.idplaneta",as="planeta")
+   @Referenced(from = "planeta",localField = "idplaneta",foreignField = "planeta.idplaneta",as="planeta", typePK = TypePK.STRING)
             
     Curso curso;
 

@@ -8,7 +8,8 @@ import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Entity;
 import com.jmoordb.core.annotation.Id;
 import com.jmoordb.core.annotation.Referenced;
-
+import com.jmoordb.core.annotation.enumerations.TypePK;
+ 
 /**
  *
  * @author avbravo
@@ -20,7 +21,7 @@ public class Pais {
     private String idpais;
     @Column
     private String pais;
-    @Referenced(from = "planeta",localField = "idplaneta",foreignField = "planeta.idplaneta",as="planeta")
+    @Referenced(from = "planeta",localField = "idplaneta",foreignField = "planeta.idplaneta",as="planeta",typePK = TypePK.STRING)
     private Planeta planeta;
 
     public Pais() {

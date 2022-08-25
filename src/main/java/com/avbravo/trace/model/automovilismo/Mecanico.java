@@ -7,6 +7,7 @@ package com.avbravo.trace.model.automovilismo;
 import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Id;
 import com.jmoordb.core.annotation.Referenced;
+import com.jmoordb.core.annotation.enumerations.TypePK;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Mecanico {
     @Column
    private String nombre;
     
-    @Referenced(from = "provincia",localField = "idprovincia",foreignField = "provincia.idprovincia",as="provincia")
+    @Referenced(from = "provincia",localField = "idprovincia",foreignField = "provincia.idprovincia",as="provincia",typePK = TypePK.LONG)
     private Provincia provincia;
 
     public Mecanico() {

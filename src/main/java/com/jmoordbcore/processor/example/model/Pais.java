@@ -30,7 +30,7 @@ public class Pais {
     private List<Musica> musica;
     @Referenced(from = "planeta",localField = "planeta.idplaneta",foreignField = "idplaneta",as ="planeta", typePK = TypePK.STRING)
     private Planeta planeta;
-    @Referenced(from = "oceano",localField = "oceano.idoceano",foreignField = "idoceano",as ="oceano")
+    @Referenced(from = "oceano",localField = "oceano.idoceano",foreignField = "idoceano",as ="oceano", typePK = TypePK.STRING)
     private List<Oceano> oceano;
 
     

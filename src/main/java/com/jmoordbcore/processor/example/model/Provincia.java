@@ -8,6 +8,7 @@ import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Entity;
 import com.jmoordb.core.annotation.Id;
 import com.jmoordb.core.annotation.Referenced;
+import com.jmoordb.core.annotation.enumerations.TypePK;
 
 /**
  *
@@ -20,7 +21,8 @@ public class Provincia {
     private String idprovincia;
     @Column
     private String provincia;
-    @Referenced(from = "provincia", localField = "provincia.idprovincia", foreignField = "idprovincia", as = "provincia")
+    @Referenced(from = "provincia", localField = "provincia.idprovincia", foreignField = "idprovincia", as = "provincia",
+            typePK = TypePK.STRING)
     private Pais pais;
 
     public Provincia() {

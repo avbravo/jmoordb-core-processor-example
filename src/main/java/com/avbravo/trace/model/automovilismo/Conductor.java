@@ -7,6 +7,7 @@ package com.avbravo.trace.model.automovilismo;
 import com.jmoordb.core.annotation.Column;
 import com.jmoordb.core.annotation.Id;
 import com.jmoordb.core.annotation.Referenced;
+import com.jmoordb.core.annotation.enumerations.TypePK;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Conductor {
     private String idconductor;
     @Column
    private String nombre;
-    @Referenced(from = "auto",localField = "idauto",foreignField = "auto.idauto",as="auto")
+    @Referenced(from = "auto",localField = "idauto",foreignField = "auto.idauto",as="auto",typePK = TypePK.STRING)
     private Auto auto;
 
     public Conductor() {
