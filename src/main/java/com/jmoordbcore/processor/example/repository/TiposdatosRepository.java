@@ -4,19 +4,22 @@
  */
 package com.jmoordbcore.processor.example.repository;
 
-import com.jmoordb.core.annotation.enumerations.JakartaSource;
 import com.jmoordb.core.annotation.enumerations.TypePK;
+import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.repository.RepositoryCrud;
-import com.jmoordbcore.processor.example.model.Oceano;
 import com.jmoordbcore.processor.example.model.Tiposdatos;
+import java.util.List;
 
 /**
  *
  * @author avbravo
  */
-@Repository(entity = Tiposdatos.class, fieldPk = "idtiposdatos", typePK = TypePK.LONG,
+@Repository(entity = Tiposdatos.class, 
         database = "{mongodb.database}", collection = "tiposdatos")
 public interface TiposdatosRepository extends   RepositoryCrud<Tiposdatos, Long>{
+    
+    @Find
+    List<Tiposdatos> findByIdAndNombreAndEdadLessThan(String id, String nombre, Integer edad);
     
 }

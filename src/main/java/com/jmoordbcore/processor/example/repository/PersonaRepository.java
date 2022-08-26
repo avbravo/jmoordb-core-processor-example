@@ -15,7 +15,7 @@ import com.jmoordbcore.processor.example.model.Pais;
  *
  * @author avbravo
  */
-@Repository(entity = Persona.class, fieldPk = "idedificio",typePK = TypePK.STRING,
+@Repository(entity = Persona.class, 
         jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "edificio")
 public interface PersonaRepository extends RepositoryCrud<Persona,Long>{

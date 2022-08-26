@@ -15,7 +15,7 @@ import com.jmoordbcore.processor.example.model.Planeta;
  *
  * @author avbravo
  */
-@Repository(entity = Planeta.class, fieldPk = "idplaneta", typePK = TypePK.STRING,
+@Repository(entity = Planeta.class, 
         database = "{mongodb.database}", collection = "planeta")
 public interface PlanetaRepository extends   RepositoryCrud<Planeta, String>{
     

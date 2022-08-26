@@ -18,7 +18,7 @@ import java.util.Optional;
  *
  * @author avbravo
  */
-@Repository(entity = Pais.class, fieldPk = "idpais",jakartaSource = JakartaSource.JAKARTA,
+@Repository(entity = Pais.class, jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "pais")
 public interface PaisRepository extends RepositoryCrud<Pais, String>{
 //    @Save

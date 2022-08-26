@@ -5,16 +5,21 @@
 package com.jmoordbcore.processor.example.repository;
 
 import com.jmoordb.core.annotation.enumerations.JakartaSource;
+import com.jmoordb.core.annotation.repository.Find;
 import com.jmoordb.core.annotation.repository.Repository;
 import com.jmoordb.core.annotation.repository.Save;
+import com.jmoordb.core.model.Pagination;
 import com.jmoordbcore.processor.example.model.Oceano;
 import com.jmoordb.core.repository.RepositoryCrud;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  *
  * @author avbravo
  */
-@Repository(entity = Oceano.class, fieldPk = "idoceano", jakartaSource = JakartaSource.JAKARTA,
+@Repository(entity = Oceano.class,  jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "oceano")
 public interface OceanoRepository extends RepositoryCrud<Oceano, String>{
 
@@ -30,10 +35,10 @@ public interface OceanoRepository extends RepositoryCrud<Oceano, String>{
 //
 //    @Find()
 //    public Stream<Oceano> findAll();
-//
+
 //    @Find()
 //    public List<Oceano> findAllPagination(Pagination pagination);
-////
+//
 
 //    @Find()
 //    public List<Oceano> findAllSorted(Sorted sorted);

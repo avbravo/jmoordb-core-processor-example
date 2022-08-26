@@ -15,8 +15,7 @@ import com.jmoordbcore.processor.example.model.Pais;
  *
  * @author avbravo
  */
-@Repository(entity = Edificio.class, fieldPk = "idedificio",typePK = TypePK.LONG,
-        jakartaSource = JakartaSource.JAKARTA,
+@Repository(entity = Edificio.class, jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "edificio")
 public interface EdificioRepository extends RepositoryCrud<Edificio,Long>{
   
