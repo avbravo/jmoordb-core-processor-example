@@ -15,11 +15,8 @@ import java.util.List;
  *
  * @author avbravo
  */
-@Repository(entity = Tiposdatos.class, 
-        database = "{mongodb.database}", collection = "tiposdatos")
+@Repository(entity = Tiposdatos.class)
 public interface TiposdatosRepository extends   RepositoryCrud<Tiposdatos, Long>{
     
-    @Find
-    List<Tiposdatos> findByIdAndNombreAndEdadLessThan(String id, String nombre, Integer edad);
-    
+  
 }
