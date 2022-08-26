@@ -12,8 +12,7 @@ import com.jmoordbcore.processor.example.model.Profesion;
  *
  * @author avbravo
  */
-@Repository(entity = Profesion.class, 
-        database = "{mongodb.database")
+@Repository(entity = Profesion.class)
 public interface ProfesionRepository extends RepositoryCrud<Profesion, Long>{
  
 }
