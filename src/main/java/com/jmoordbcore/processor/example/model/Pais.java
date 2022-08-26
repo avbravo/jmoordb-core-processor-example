@@ -10,6 +10,7 @@ import com.jmoordb.core.annotation.Entity;
 import com.jmoordb.core.annotation.Id;
 import com.jmoordb.core.annotation.Referenced;
 import com.jmoordb.core.annotation.enumerations.TypePK;
+import com.jmoordb.core.annotation.enumerations.TypeReferenced;
 import java.util.List;
 
 /**
@@ -30,7 +31,7 @@ public class Pais {
     private List<Musica> musica;
     @Referenced(from = "planeta",localField = "planeta.idplaneta")
     private Planeta planeta;
-    @Referenced(from = "oceano",localField = "oceano.idoceano")
+    @Referenced(from = "oceano",localField = "oceano.idoceano",typeReferenced = TypeReferenced.EMBEDDED)
     private List<Oceano> oceano;
 
     
