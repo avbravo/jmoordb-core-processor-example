@@ -17,6 +17,6 @@ import com.jmoordbcore.processor.example.model.Tiposdatos;
  */
 @Repository(entity = Tiposdatos.class, fieldPk = "idtiposdatos", typePK = TypePK.LONG,
         database = "{mongodb.database}", collection = "tiposdatos")
-public interface TiposdatosRepository extends   RepositoryCrud<Tiposdatos, Integer>{
+public interface TiposdatosRepository extends   RepositoryCrud<Tiposdatos, Long>{
     
 }
