@@ -18,6 +18,6 @@ import com.jmoordbcore.processor.example.model.Pais;
 @Repository(entity = Provincia.class, 
         jakartaSource = JakartaSource.JAKARTA,
         database = "{mongodb.database}", collection = "provincia")
-public interface ProvinciaRepository extends RepositoryCrud<Provincia,Long>{
+public interface ProvinciaRepository extends RepositoryCrud<Provincia,String>{
   
 }

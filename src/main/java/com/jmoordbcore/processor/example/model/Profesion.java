@@ -21,8 +21,7 @@ public class Profesion {
     private Long idprofesion;
     @Column
     private String profesion;
-    @Referenced(from = "grupoprofesion", localField = "grupoprofesion.idgrupoprofesion", 
-            foreignField = "idgrupoprofesion", as = "grupoprofesion", typePK = TypePK.STRING)
+    @Referenced(from = "grupoprofesion", localField = "grupoprofesion.idgrupoprofesion" )
     private Grupoprofesion grupoprofesion;
 
     public Profesion() {

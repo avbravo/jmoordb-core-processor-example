@@ -21,9 +21,9 @@ public class Persona {
     private String idpersona;
     @Column
     private String nombre;
-    @Referenced(from = "corregimiento", localField = "corregimiento.idcorregimiento", foreignField = "idcorregimiento", as = "corregimiento",typePK = TypePK.STRING)
+    @Referenced(from = "corregimiento", localField = "corregimiento.idcorregimiento")
     private Corregimiento corregimiento;
-    @Referenced(from = "profesion", localField = "profesion.idprofesion", foreignField = "idprofesion", as = "profesion", typePK = TypePK.LONG)
+    @Referenced(from = "profesion", localField = "profesion.idprofesion")
     private Profesion profesion;
 
     public Persona() {

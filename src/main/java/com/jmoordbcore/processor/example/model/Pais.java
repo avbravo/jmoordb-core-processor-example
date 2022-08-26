@@ -28,9 +28,9 @@ public class Pais {
     
     @Embedded
     private List<Musica> musica;
-    @Referenced(from = "planeta",localField = "planeta.idplaneta",foreignField = "idplaneta",as ="planeta", typePK = TypePK.STRING)
+    @Referenced(from = "planeta",localField = "planeta.idplaneta")
     private Planeta planeta;
-    @Referenced(from = "oceano",localField = "oceano.idoceano",foreignField = "idoceano",as ="oceano", typePK = TypePK.STRING)
+    @Referenced(from = "oceano",localField = "oceano.idoceano")
     private List<Oceano> oceano;
 
     

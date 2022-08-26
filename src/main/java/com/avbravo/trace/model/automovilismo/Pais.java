@@ -21,7 +21,7 @@ public class Pais {
     private String idpais;
     @Column
     private String pais;
-    @Referenced(from = "planeta",localField = "idplaneta",foreignField = "planeta.idplaneta",as="planeta",typePK = TypePK.STRING)
+    @Referenced(from = "planeta",localField = "planeta.idplaneta")
     private Planeta planeta;
 
     public Pais() {

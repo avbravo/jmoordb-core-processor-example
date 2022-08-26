@@ -21,7 +21,7 @@ public class Provincia {
     private Long idprovincia;
     @Column
     private String provincia;
-     @Referenced(from = "pais",localField = "idpais",foreignField = "pais.idpais",as="pais",typePK = TypePK.STRING)
+     @Referenced(from = "pais",localField = "pais.idpais")
     private Pais pais;
 
     public Provincia() {

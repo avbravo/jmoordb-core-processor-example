@@ -18,7 +18,7 @@ public class Video {
     private String idvideo;
     @Column
     private String video;
-   @Referenced(from = "planeta",localField = "idplaneta",foreignField = "planeta.idplaneta",as="planeta", typePK = TypePK.STRING)
+   @Referenced(from = "planeta",localField = "idplaneta")
             
     Curso curso;
 

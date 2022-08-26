@@ -19,7 +19,7 @@ public class Conductor {
     private String idconductor;
     @Column
    private String nombre;
-    @Referenced(from = "auto",localField = "idauto",foreignField = "auto.idauto",as="auto",typePK = TypePK.STRING)
+    @Referenced(from = "auto",localField = "idauto")
     private Auto auto;
 
     public Conductor() {
